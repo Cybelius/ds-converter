@@ -38,6 +38,11 @@ def vhs(img, layer, add_border, add_messy, add_glitch, glitch_y,
     # Scale image to PAL size (720 x 576)
     scale_to_pal(img, down_interpol, up_interpol)
 
+    # Simplement cropper en HD
+    #new_image = pdb.gimp_image_duplicate(img)
+    #pdb.gimp_file_save(new_image, layer, 'dataset/ImagesDatasetHD_cropped/' + filename + '_cropped.jpg', '?')
+    #print(filename + '_cropped.jpg saved')
+
     # Add VHS border if required
     if add_border:
         layer = add_vhs_border(img, layer)
@@ -96,7 +101,8 @@ def vhs(img, layer, add_border, add_messy, add_glitch, glitch_y,
     #pdb.gimp_paintbrush(final_layer, 0, 4, [10,15,300,116], 1, 1000.0)
 
     new_image = pdb.gimp_image_duplicate(img)
-    pdb.gimp_file_save(new_image, final_layer, '/home/geoffrey/Downloads/dataset/ImagesDatasetHD_messy/' + filename + '_messy.jpg', '?')
+    pdb.gimp_file_save(new_image, final_layer, 'dataset/ImagesDatasetHD_messy/' + filename + '_messy.jpg', '?')
+    print(filename + '_messy.jpg saved')
 
     img.undo_group_end()
     gimp.context_pop()

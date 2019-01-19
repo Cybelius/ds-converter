@@ -12,7 +12,7 @@ gettext.install("gimp20-python", gimp.locale_directory, unicode=True)
 
 PAL_WIDTH = 720 
 PAL_HEIGHT = 576
-path = '/home/geoffrey/Downloads/dataset/ImagesDatasetHD/*'
+path = 'dataset/ImagesDatasetHD/*'
 
 def run():
     readFolderVhs()
